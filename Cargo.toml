@@ -1,0 +1,36 @@
+[package]
+name = "chess_browser"
+version = "0.0.1"
+authors = ["slivering <47292273+slivering@users.noreply.github.com>"]
+description = """A package to play chess in the browser, manage PGN files
+and play with a chess engine."""
+keywords = ["chess", "browser", "engine"]
+categories = ["wasm"]
+readme = "README.md"
+license = "MIT"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+
+[profile.release]
+opt-level = 3
+lto = true
+
+[dependencies]
+chess_std = { version = "*", path = "chess_std" }
+wasm-bindgen = { version = "*" }
+js-sys = "*"
+
+[dependencies.derive_more]
+version = "*"
+default-features = false
+features = ["add", "index"]
+
+
+[dev-dependencies]
+#console_error_panic_hook = "^0.1"
+wasm-bindgen-test = "*"
+#futures = "^0.3"
+#wasm-bindgen-futures = "^0.4"

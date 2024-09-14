@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "es2020",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "outDir": "./js",
+        "incremental": true,
+        "allowJs": true
+    },
+    "files": [
+        "./js/index.ts",
+        "./js/consts.ts"
+    ],
+    "compileOnSave": true
+}

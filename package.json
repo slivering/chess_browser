@@ -1,0 +1,23 @@
+{
+  "author": "slivering <47292273+slivering@users.noreply.github.com>",
+  "name": "chess_browser",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "build": "wasm-pack build --target=web && tsc",
+    "start": "webpack-dev-server",
+    "test": "cargo test && wasm-pack test --node"
+  },
+  "dependencies": {
+    "@svgdotjs/svg.js": "*",
+    "chess_browser": "file:./pkg"
+  },
+  "devDependencies": {
+    "typescript": "*",
+    "@wasm-tool/wasm-pack-plugin": "^*",
+    "copy-webpack-plugin": "*",
+    "webpack": "*",
+    "webpack-cli": "*",
+    "webpack-dev-server": "*"
+  }
+}

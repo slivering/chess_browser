@@ -1,0 +1,57 @@
+[package]
+name = "chess_std"
+version = "0.0.1"
+authors = ["lvt"]
+license = "MIT"
+edition = "2021"
+description = "Chess interface and file parsing."
+readme = "README.md"
+keywords = ["chess"]
+categories = ["parser-implementations", "games"]
+build = "src/build.rs"
+
+[lib]
+name = "chess_std"
+path = "src/lib.rs"
+
+[features]
+fen = []
+pgn = ["fen", "regex", "lazy_static"] # PGN file parsing
+trees = []
+default = ["fen", "pgn"]
+
+
+[dependencies]
+arrayvec    = "^0.7"
+
+[dependencies.derive_more]
+version = "*"
+default-features = false
+features = ["add", "mul", "from", "display"]
+
+[dependencies.regex]
+version = "*"
+default-features = false
+features = ["std", "unicode-perl"]
+optional = true
+
+[dependencies.lazy_static]
+version = "*"
+optional = true
+
+[build-dependencies]
+rand = { version = "*", default-features = false, features = ["small_rng"] }
+
+[build-dependencies.derive_more]
+version = "*"
+default-features = false
+features = ["add", "add_assign", "mul", "mul_assign", "not", "from", "index", "display", "into"]
+
+[profile.dev]
+opt-level = 3
+
+[profile.release]
+opt-level = 3
+
+[profile.test]
+opt-level = 3
