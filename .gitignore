@@ -4,3 +4,6 @@ node_modules
 /pkg
 /wasm-pack.log
 Cargo.lock
+
+.codegpt
+.vscode

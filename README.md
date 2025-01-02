@@ -12,7 +12,7 @@ A simple program to play chess in the browser.
 
 ### Running
 
-```
+```bash
 npm install
 npm run build
 npm start
